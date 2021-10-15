@@ -24,9 +24,10 @@ contract Caller {
             abi.encodeWithSignature("foo(string,uint256)", "call foo", 123)
         );
         
-        require(success, "failed");
+        if(!success){
            
           revertBytes(data);
+        }
         
         
     }
